@@ -51,8 +51,8 @@ ytdl_format_options = {
 }
 
 ffmpeg_options = {
-    'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
-    'options': '-vn',
+    'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5 -probesize 32k -analyzeduration 0',
+    'options': '-vn -ac 2 -ar 48000 -b:a 96k -bufsize 64k',
 }
 
 ytdl = yt_dlp.YoutubeDL(ytdl_format_options)
